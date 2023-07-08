@@ -1,6 +1,7 @@
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import requests
+import json
 
 # Load configuration from a JSON file
 with open('config.json') as f:

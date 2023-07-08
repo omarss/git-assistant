@@ -4,33 +4,47 @@ This script fetches all comments from all pull requests in a GitHub repository a
 
 ## Prerequisites
 
-- Python 3
-- Install the required Python libraries with pip:
+- Python 3.x
+- Google account with access to Google Sheets
+- GitHub Personal Access Token
+- Client JSON file for accessing the Google Sheets API
+
+## Setup
+
+1. Clone this repository or download the script file.
+
+2. Install the required Python packages using pip:
 
 ```bash
 pip install -r requirements.txt
 ```
+3. Obtain a GitHub Personal Access Token:
 
-- A GitHub personal access token. You can create one in the [GitHub settings](https://github.com/settings/tokens).
-- The owner and name of the GitHub repository you want to fetch comments from.
-- A Google Spreadsheet that you have edit permissions to, and its ID. You can find the ID in the URL of the spreadsheet. For example, in the URL `https://docs.google.com/spreadsheets/d/1qPyC1RvkRHIANr1I2A4efA8YU1ZiV1HkVJxPv3Sv3iw/edit#gid=0`, the ID is `1qPyC1RvkRHIANr1I2A4efA8YU1ZiV1HkVJxPv3Sv3iw`.
-- A JSON key file for a Google service account that has edit permissions to the Google Spreadsheet. You can create a service account and download the JSON key file in the [Google Cloud Console](https://console.cloud.google.com/).
+- Go to your GitHub account settings.
+- Navigate to "Developer settings" > "Personal access tokens".
+- Click on "Generate new token" and provide a name for the token.
+- Select the necessary scopes or permissions (e.g., repo:public_repo for accessing public repositories, or repo for accessing private repositories).
+- Click on "Generate token" and make sure to copy and save the generated token.
 
-## Configuration
+4. Retrieve the client JSON file for accessing the Google Sheets API:
 
-Create a `config.json` file in the same directory as the script, with the following content:
+- Go to the [Google Cloud Console](https://console.cloud.google.com/).
+- Create a new project or select an existing project.
+- Navigate to the "APIs & Services" > "Credentials" page.
+- Click on "Create credentials" and select "Service account".
+- Provide a name for the service account, choose the appropriate role, and grant access to the Google Sheets API.
+- Click on "Create" and skip the user access configuration.
+- On the "Credentials" page, find the newly created service account and click on the three-dot menu, then select "Manage keys".
+- Click on "Add key" > "Create new key" > JSON.
+- Save the downloaded JSON key file to the same directory as the script and rename it to `client_secret.json`.
 
-```json
-{
-    "github_token": "your-token-here",
-    "repository_owner": "owner",
-    "repository_name": "repo",
-    "google_credentials_file": "client_secret.json",
-    "spreadsheet_id": "your-spreadsheet-id"
-}
-```
+5. Open the `config.json` file and update the configuration values:
 
-Replace `"your-token-here"`, `"owner"`, `"repo"`, `"client_secret.json"`, and `"your-spreadsheet-id"` with your own values.
+- `"github_token"`: Replace `"your-github-token"` with your GitHub Personal Access Token.
+- `"repository_owner"`: Replace `"your-repository-owner"` with the owner/organization of the repository.
+- `"repository_name"`: Replace `"your-repository-name"` with the name of the repository.
+- `"google_credentials_file"`: Replace `"your-credentials-file"` with the filename of the client JSON file (e.g., `client_secret.json`).
+- `"spreadsheet_id"`: Replace `"your-spreadsheet-id"` with the ID of the Google Spreadsheet you want to append the comments to.
 
 ## Running the Script
 
