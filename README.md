@@ -38,5 +38,6 @@ Run the script with Python:
 
 ```bash
 python script.py
+```
 
 The script will fetch all comments from all pull requests in the specified GitHub repository and append them to the specified Google Spreadsheet. Each row in the spreadsheet will contain the number of the pull request, the username of the commenter, the body of the comment, the date of the comment, and the URL of the comment.
