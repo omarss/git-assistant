@@ -28,6 +28,7 @@ Create a `config.json` file in the same directory as the script, with the follow
     "google_credentials_file": "client_secret.json",
     "spreadsheet_id": "your-spreadsheet-id"
 }
+```
 
 Replace `"your-token-here"`, `"owner"`, `"repo"`, `"client_secret.json"`, and `"your-spreadsheet-id"` with your own values.
 
