@@ -1,0 +1,17 @@
+# Python
+*.pyc
+__pycache__/
+venv/
+*.env
+
+# Google Cloud
+client_secret.json
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Miscellaneous
+.DS_Store
