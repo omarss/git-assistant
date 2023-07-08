@@ -1,0 +1,7 @@
+{
+    "github_token": "your-token-here",
+    "repository_owner": "owner",
+    "repository_name": "repo",
+    "google_credentials_file": "client_secret.json",
+    "spreadsheet_id": "your-spreadsheet-id"
+}
