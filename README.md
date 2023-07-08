@@ -5,11 +5,11 @@ This script fetches all comments from all pull requests in a GitHub repository a
 ## Prerequisites
 
 - Python 3
-- `gspread` and `oauth2client` Python libraries. You can install these with pip:
+- Install the required Python libraries with pip:
 
-    ```
-    pip install gspread oauth2client
-    ```
+```bash
+pip install -r requirements.txt
+```
 
 - A GitHub personal access token. You can create one in the [GitHub settings](https://github.com/settings/tokens).
 - The owner and name of the GitHub repository you want to fetch comments from.
